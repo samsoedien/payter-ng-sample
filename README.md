@@ -1,27 +1,40 @@
-# NgSample
+# Angular Sample Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project serves as a test project to evaluate job prospects technical skills and work habits.
+It consists of a basic angular/bootstrap application where applicants will be asked to implement certain features.
 
-## Development server
+## Getting started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Technology
 
-## Code scaffolding
+This project uses the following technologies:
+* Angular 6 (https://angular.io/)
+* Bootstrap 4 (https://getbootstrap.com/)
+* Node.js and NPM (Node package manager) (https://nodejs.org/en/)
+* Git version control (https://git-scm.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before continuing please install a Git client, and Node.js for your platform.
 
-## Build
+### Cloning the repository
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Clone this repository using `git clone <url>` with the url specified at the top of this page.
 
-## Running unit tests
+Create a personal branch of the master branch where you can commit your code. Run `git branch <your-name>` to create a local branch.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Testing the application
 
-## Running end-to-end tests
+Run `ng serve` inside the project directory to start a development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Committing your changes
 
-## Further help
+Add and commit your changes to your personal branch. Whenever you are ready to do so, push your changes to the repository using `git push origin`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Assignment
+
+The task(s) specific assignment 
+
+### Overview page
+
+### Details page
+
+### Form
