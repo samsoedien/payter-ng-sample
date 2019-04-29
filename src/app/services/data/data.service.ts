@@ -5,10 +5,24 @@ import { delay } from 'rxjs/operators';
 
 import { DataItem } from '../../model';
 
+const MOCK_ITEMS: DataItem[] = [
+  { id: 1, name: 'item1', description: 'first item'},
+  { id: 2, name: 'second item', description: 'this item comes after the first item'},
+  { id: 3, name: 'another item', description: 'we have lots of items'},
+  { id: 23, name: 'bonus item', description: 'this item is extra'},
+  { id: 51, name: 'Bobi', description: '7 ft 3 Center for the Philadelphia 76ers'},
+];
+
 @Injectable()
 export class DataService {
 
   private items: Map<number, DataItem> = new Map<number, DataItem>();
+
+  constructor() {
+    MOCK_ITEMS.forEach(item => {
+      this.items.set(item.id, item);
+    })
+  }
 
   listItems(): Observable<DataItem[]> {
     let values = Array.from(this.items.values());
@@ -20,6 +34,7 @@ export class DataService {
   }
 
   createItem(item: DataItem): Observable<DataItem> {
+    item.id = this.generateId();
     this.items.set(item.id, item);
     return of(item).pipe(delay(200));
   }
@@ -29,4 +44,14 @@ export class DataService {
     return of(null);
   }
 
+  private generateId(): number {
+    let id: number = 0;
+    if(this.items.size >= 100) {
+      throw new Error('cannot add any more items');
+    }
+    do {
+      id = Math.floor(Math.random()*100)+1;
+    } while(this.items.has(id));
+    return id;
+  }
 }

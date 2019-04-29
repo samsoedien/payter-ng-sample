@@ -1,23 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HeaderComponent, MenuComponent } from './components';
+import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, NewItemComponent } from 'app/components';
 
+import { DataService } from 'app/services/data';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    OverviewComponent,
+    DetailsComponent,
+    NewItemComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  },
+  DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

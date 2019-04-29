@@ -1,0 +1,17 @@
+<div class="card" *ngIf="$item | async as item; else notFound">
+  <div class="card-header">
+    Item: {{ item.name }}
+  </div>
+  <div class="card-body">
+    {{ item | json }}
+  </div>
+  <div class="card-footer">
+
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="alert alert-danger">
+    Item not found
+  </div>
+</ng-template>
