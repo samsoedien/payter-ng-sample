@@ -42,6 +42,7 @@ The task(s) specific assignment will be delivered to you separately. They can co
 
 The application is a basic browser based application. It has a header bar, a side menu and a main content container. Pages will be loaded in the main container.
 The following pages exist in the application:
+
 * Dashboard (empty)
 * Overview of items
 * Details of single item
@@ -50,6 +51,7 @@ The following pages exist in the application:
 ### Directory structure
 
 The application follows a common angular directory structure. The relevant files are all located in the /src directory.
+
 * /src/app -> all the angular code
   * /src/app/components -> all the angular components (e.g. overview, header, menu, etc)
   * /src/app/services -> all the application services (e.g. data-service)
