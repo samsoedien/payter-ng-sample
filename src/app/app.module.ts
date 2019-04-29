@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, NewItemComponent } from 'app/components';
+import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, NewItemComponent, DashboardComponent } from 'app/components';
 
 import { DataService } from 'app/services/data';
 
@@ -18,6 +18,7 @@ import { DataService } from 'app/services/data';
     OverviewComponent,
     DetailsComponent,
     NewItemComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
