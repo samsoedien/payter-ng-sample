@@ -53,9 +53,9 @@ The following pages exist in the application:
 The application follows a common angular directory structure. The relevant files are all located in the /src directory.
 
 * /src/app -> all the angular code
-  * /src/app/components -> all the angular components (e.g. overview, header, menu, etc)
-  * /src/app/services -> all the application services (e.g. data-service)
-  * /src/app/model -> all the application data model (e.g. data-item)
+    * /src/app/components -> all the angular components (e.g. overview, header, menu, etc)
+    * /src/app/services -> all the application services (e.g. data-service)
+    * /src/app/model -> all the application data model (e.g. data-item)
 * /src/assets -> images & icons
 * /src/scss -> all the scss pre-processor files
 
