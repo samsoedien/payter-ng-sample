@@ -12,6 +12,8 @@ This project uses the following technologies:
 * Bootstrap 4 (https://getbootstrap.com/)
 * Node.js and NPM (Node package manager) (https://nodejs.org/en/)
 * Git version control (https://git-scm.com/)
+* Sass css pre-processor (https://sass-lang.com/)
+* Font awesome icons (https://fontawesome.com/)
 
 Before continuing please install a Git client, and Node.js for your platform.
 
@@ -31,7 +33,7 @@ Add and commit your changes to your personal branch. Whenever you are ready to d
 
 ## Assignment
 
-The task(s) specific assignment 
+The task(s) specific assignment
 
 ### Overview page
 
