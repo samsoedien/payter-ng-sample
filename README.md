@@ -32,7 +32,11 @@ Run `ng serve` inside the project directory to start a development server. Navig
 
 ### Committing your changes
 
-Add and commit your changes to your personal branch. Whenever you are ready to do so, push your changes to the repository using `git push origin`.
+For each assignment you will be asked for patch files. The patch files should contain only the changes relevant to the assignment.
+Create a new branch from your personal branch for each assignment `git branch ASSIGNMENT-<NR>`. When you are done, add and commit your changes to the assignment branch.
+
+To create a patch use `git format-patch USER-<name> -o patches/assignment-<NR>` which will create patch file for each commit with all the changes between your assignment branch, and the base branch, and place them in the directory patches/assignment-X.
+Finally merge your changes into your personal branch by running `git checkout USER-<name>` and  `git merge ASSIGNMENT-<NR>`. You are now free to create a new branch for the next assignment.
 
 ## Assignment
 
