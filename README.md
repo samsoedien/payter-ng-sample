@@ -22,7 +22,7 @@ Before continuing please install a Git client, and Node.js for your platform.
 
 Clone this repository using `git clone <url>` with the url specified at the top of this page.
 
-Create a personal branch of the master branch where you can commit your code. Run `git branch <your-name>` to create a local branch.
+Create a personal branch of the master branch where you can commit your code. Run `git branch USER-<your-name>` to create a local branch.
 
 ### Testing the application
 
