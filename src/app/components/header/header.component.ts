@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html'
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  navLogo: string;
 
+  constructor() {
+    this.navLogo = "/assets/img/logo.png";
+  }
+
+  ngOnInit() {}
 }
