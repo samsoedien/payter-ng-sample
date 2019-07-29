@@ -1,0 +1,30 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-group--container {
+  order: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-label {
+  margin: 0;
+  text-align: right;
+  flex-grow: 1;
+  align-self: center;
+  width: 120px;
+}
+
+.form-control {
+  flex-grow: 3;
+  margin-left: 12px;
+}
+
+.invalid-feedback {
+  align-self: flex-end;
+  order: 1;
+  height: 30px;
+}

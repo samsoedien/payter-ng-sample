@@ -1,25 +1,25 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject } from "rxjs";
 
-import { DataItem } from 'app/model';
-import { DataService } from 'app/services/data';
+import { DataItem } from "app/model";
+import { DataService } from "app/services/data";
 
 @Component({
-  templateUrl: './new-item.component.html'
+  templateUrl: "./new-item.component.html",
+  styleUrls: ["./new-item.component.css"]
 })
 export class NewItemComponent {
-
   form: FormGroup;
 
   $error: Subject<string> = new BehaviorSubject<string>(null);
 
   constructor(
-      private formBuilder: FormBuilder,
-      private dataService: DataService,
-      private router: Router,
+    private formBuilder: FormBuilder,
+    private dataService: DataService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -45,15 +45,18 @@ export class NewItemComponent {
 
     const newItem: DataItem = {
       name: value.name,
-      description: value.description,
-    }
+      description: value.description
+    };
 
     console.log(value);
 
-    this.dataService.createItem(newItem).subscribe((item) => {
-      this.router.navigate(['/items','details', item.id]);
-    }, err => {
-      this.$error.next(err.message);
-    });
+    this.dataService.createItem(newItem).subscribe(
+      item => {
+        this.router.navigate(["/items", "details", item.id]);
+      },
+      err => {
+        this.$error.next(err.message);
+      }
+    );
   }
 }
