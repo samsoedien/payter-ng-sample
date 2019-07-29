@@ -1,0 +1,51 @@
+.list-group-item {
+  padding: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+
+.list-group-item__icon {
+  width: 60px;
+  align-self: center;
+}
+
+.list-group-item__data {
+  align-self: center;
+  flex-grow: 3;
+  text-transform: capitalize;
+}
+
+.list-group-item__data__description {
+  max-height: 0px;
+  height: auto;
+  transition: max-height 0.4s ease-out;
+  overflow: hidden;
+}
+
+.list-group-item:hover .list-group-item__data__description {
+  max-height: 400px;
+  transition: max-height 0.4s ease-in;
+}
+
+.overview__view-item-button {
+  height: 42px;
+  width: 132px;
+  align-self: center;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+
+.overview__heading {
+  flex-grow: 3;
+}
+
+.overview__new-item-button {
+  align-self: center;
+  height: 42px;
+  width: 132px;
+}

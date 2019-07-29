@@ -1,13 +1,30 @@
 <div class="card-deck">
   <div class="card">
     <div class="card-header">
-      <h1>Overview of the items</h1>
-      <a class="btn btn-transparent" [routerLink]="['/items','new']">New</a>
+      <h1 class="overview__heading">Overview of the items</h1>
+      <a
+        class="btn btn-primary overview__new-item-button"
+        [routerLink]="['/items', 'new']"
+        ><i class="fa fa-plus-square pr-2"></i>New item</a
+      >
     </div>
     <ul class="list-group" *ngFor="let item of $items | async">
-      <li class="list-group-item" (click)="onSelectItem(item.id)">{{ item | json }}</li>
+      <li class="list-group-item">
+        <div class="list-group-item__icon"></div>
+        <div class="list-group-item__data">
+          <h5>{{ item.name }}</h5>
+          <p class="list-group-item__data__description">
+            {{ item.description }}
+          </p>
+        </div>
+        <button
+          class="btn btn-secondary overview__view-item-button"
+          (click)="onSelectItem(item.id)"
+        >
+          <i class="fa fa-file pr-2">&nbsp;</i>View Item
+        </button>
+      </li>
     </ul>
-    <div class="card-footer">
-    </div>
+    <div class="card-footer"></div>
   </div>
 </div>

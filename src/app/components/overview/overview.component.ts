@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from "rxjs";
 
-import { DataItem } from 'app/model';
-import { DataService } from 'app/services/data';
+import { DataItem } from "app/model";
+import { DataService } from "app/services/data";
 
 @Component({
-  selector: 'app-overview',
-  templateUrl: './overview.component.html'
+  selector: "app-overview",
+  templateUrl: "./overview.component.html",
+  styleUrls: ["./overview.component.css"]
 })
 export class OverviewComponent implements OnInit {
-
   $items: Subject<DataItem[]> = new BehaviorSubject<DataItem[]>([]);
 
   constructor(
     private dataService: DataService,
     private router: Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -29,10 +29,10 @@ export class OverviewComponent implements OnInit {
   }
 
   onSelectItem(id: number) {
-    this.router.navigate(['/items','details', id]);
+    this.router.navigate(["/items", "details", id]);
   }
 
   onNewItem() {
-    this.router.navigate(['new']);
+    this.router.navigate(["new"]);
   }
 }
