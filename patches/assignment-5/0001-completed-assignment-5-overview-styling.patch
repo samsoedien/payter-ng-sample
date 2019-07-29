@@ -1,0 +1,817 @@
+From 833e69b16f99857df7d0dc05e140f5c4c951753b Mon Sep 17 00:00:00 2001
+From: Samsoedien <n.samsoedien@gmail.com>
+Date: Mon, 29 Jul 2019 08:12:31 +0200
+Subject: [PATCH] completed assignment 5 - overview styling
+
+---
+ ...-completed-assignment-4-form-styling.patch | 647 ++++++++++++++++++
+ .../overview/overview.component.css           |  51 ++
+ .../overview/overview.component.html          |  27 +-
+ .../components/overview/overview.component.ts |  22 +-
+ 4 files changed, 731 insertions(+), 16 deletions(-)
+ create mode 100644 patches/assignment-4/0001-completed-assignment-4-form-styling.patch
+ create mode 100644 src/app/components/overview/overview.component.css
+
+diff --git a/patches/assignment-4/0001-completed-assignment-4-form-styling.patch b/patches/assignment-4/0001-completed-assignment-4-form-styling.patch
+new file mode 100644
+index 0000000..1de2027
+--- /dev/null
++++ b/patches/assignment-4/0001-completed-assignment-4-form-styling.patch
+@@ -0,0 +1,647 @@
++From 3c475ef328b4a9516809828c0e26d9542b382068 Mon Sep 17 00:00:00 2001
++From: Samsoedien <n.samsoedien@gmail.com>
++Date: Mon, 29 Jul 2019 07:08:09 +0200
++Subject: [PATCH] completed assignment 4 - form styling
++
++---
++ ...ed-assignment-3-sidebar-menu-styling.patch | 465 ++++++++++++++++++
++ .../new-item/new-item.component.css           |  30 ++
++ .../new-item/new-item.component.html          |  36 +-
++ .../components/new-item/new-item.component.ts |  39 +-
++ 4 files changed, 544 insertions(+), 26 deletions(-)
++ create mode 100644 patches/assignment-3/0001-completed-assignment-3-sidebar-menu-styling.patch
++ create mode 100644 src/app/components/new-item/new-item.component.css
++
++diff --git a/patches/assignment-3/0001-completed-assignment-3-sidebar-menu-styling.patch b/patches/assignment-3/0001-completed-assignment-3-sidebar-menu-styling.patch
++new file mode 100644
++index 0000000..dd46378
++--- /dev/null
+++++ b/patches/assignment-3/0001-completed-assignment-3-sidebar-menu-styling.patch
++@@ -0,0 +1,465 @@
+++From c801ffa0e7348ea644a2e5172710c07041be555d Mon Sep 17 00:00:00 2001
+++From: Samsoedien <n.samsoedien@gmail.com>
+++Date: Mon, 29 Jul 2019 02:34:02 +0200
+++Subject: [PATCH] completed assignment 3 - sidebar menu styling
+++
+++---
+++ ...1-completed-assignment-2-card-layout.patch | 134 ++++++++++++++++++
+++ src/app/app-routing.module.ts                 |  30 ++--
+++ src/app/app.module.ts                         |  45 +++---
+++ src/app/components/index.ts                   |  13 +-
+++ src/app/components/menu/menu.component.css    |  35 +++++
+++ src/app/components/menu/menu.component.html   |  19 ++-
+++ src/app/components/menu/menu.component.ts     |  11 +-
+++ src/app/components/settings/index.ts          |   1 +
+++ .../settings/settings.component.html          |  11 ++
+++ .../settings/settings.component.scss          |   0
+++ .../settings/settings.component.spec.ts       |  25 ++++
+++ .../components/settings/settings.component.ts |  10 ++
+++ 12 files changed, 289 insertions(+), 45 deletions(-)
+++ create mode 100644 patches/assignment-2/0001-completed-assignment-2-card-layout.patch
+++ create mode 100644 src/app/components/menu/menu.component.css
+++ create mode 100644 src/app/components/settings/index.ts
+++ create mode 100644 src/app/components/settings/settings.component.html
+++ create mode 100644 src/app/components/settings/settings.component.scss
+++ create mode 100644 src/app/components/settings/settings.component.spec.ts
+++ create mode 100644 src/app/components/settings/settings.component.ts
+++
+++diff --git a/patches/assignment-2/0001-completed-assignment-2-card-layout.patch b/patches/assignment-2/0001-completed-assignment-2-card-layout.patch
+++new file mode 100644
+++index 0000000..30a3145
+++--- /dev/null
++++++ b/patches/assignment-2/0001-completed-assignment-2-card-layout.patch
+++@@ -0,0 +1,134 @@
++++From fd9eebe0290a953183f33371bd28268bebc093bf Mon Sep 17 00:00:00 2001
++++From: Samsoedien <n.samsoedien@gmail.com>
++++Date: Mon, 29 Jul 2019 01:15:10 +0200
++++Subject: [PATCH] completed assignment 2 - card layout
++++
++++---
++++ ...-assignment-1-brand-logo-replacement.patch | 86 +++++++++++++++++++
++++ src/app/app.component.html                    |  2 +-
++++ src/scss/custom.scss                          |  6 ++
++++ 3 files changed, 93 insertions(+), 1 deletion(-)
++++ create mode 100644 patches/assignment-1/0001-completed-assignment-1-brand-logo-replacement.patch
++++
++++diff --git a/patches/assignment-1/0001-completed-assignment-1-brand-logo-replacement.patch b/patches/assignment-1/0001-completed-assignment-1-brand-logo-replacement.patch
++++new file mode 100644
++++index 0000000..bc6242b
++++--- /dev/null
+++++++ b/patches/assignment-1/0001-completed-assignment-1-brand-logo-replacement.patch
++++@@ -0,0 +1,86 @@
+++++From 3b5125fd242069fca2aba79fcaf67a1c61f2975b Mon Sep 17 00:00:00 2001
+++++From: Samsoedien <n.samsoedien@gmail.com>
+++++Date: Mon, 29 Jul 2019 00:20:26 +0200
+++++Subject: [PATCH] completed assignment 1 - brand logo replacement
+++++
+++++---
+++++ src/app/components/header/header.component.css  |  8 ++++++++
+++++ src/app/components/header/header.component.html | 17 +++++++++++++----
+++++ src/app/components/header/header.component.ts   | 15 +++++++++++----
+++++ 3 files changed, 32 insertions(+), 8 deletions(-)
+++++ create mode 100644 src/app/components/header/header.component.css
+++++
+++++diff --git a/src/app/components/header/header.component.css b/src/app/components/header/header.component.css
+++++new file mode 100644
+++++index 0000000..bf8e522
+++++--- /dev/null
++++++++ b/src/app/components/header/header.component.css
+++++@@ -0,0 +1,8 @@
++++++.nav {
++++++  vertical-align: middle;
++++++}
++++++
++++++.navbar__brand__image {
++++++  height: 40px;
++++++  margin-right: 32px;
++++++}
+++++diff --git a/src/app/components/header/header.component.html b/src/app/components/header/header.component.html
+++++index cf54e81..b03e2ef 100644
+++++--- a/src/app/components/header/header.component.html
++++++++ b/src/app/components/header/header.component.html
+++++@@ -1,14 +1,23 @@
+++++ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+++++-  <a class="navbar-brand" [routerLink]="['/']">Payter</a>
++++++  <a class="navbar__brand" [routerLink]="['/']">
++++++    <img [src]="navLogo" alt="Payter Logo" class="navbar__brand__image" />
++++++  </a>
+++++   <div class="collapse navbar-collapse">
+++++     <ul class="navbar-nav">
+++++       <li class="nav-item active">
+++++-        <a class="nav-link" [routerLink]="['/']" >Home</a>
++++++        <a class="nav-link" [routerLink]="['/']">Home</a>
+++++       </li>
+++++     </ul>
+++++     <form class="form-inline ml-auto">
+++++-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+++++-      <button class="btn btn-outline-dark bg-light my-2 my-sm-0" type="submit">Search</button>
++++++      <input
++++++        class="form-control mr-sm-2"
++++++        type="search"
++++++        placeholder="Search"
++++++        aria-label="Search"
++++++      />
++++++      <button class="btn btn-outline-dark bg-light my-2 my-sm-0" type="submit">
++++++        Search
++++++      </button>
+++++     </form>
+++++   </div>
+++++ </nav>
+++++diff --git a/src/app/components/header/header.component.ts b/src/app/components/header/header.component.ts
+++++index 46c88a2..956ef46 100644
+++++--- a/src/app/components/header/header.component.ts
++++++++ b/src/app/components/header/header.component.ts
+++++@@ -1,9 +1,16 @@
+++++-import { Component } from '@angular/core';
++++++import { Component, OnInit } from "@angular/core";
+++++ 
+++++ @Component({
+++++-  selector: 'app-header',
+++++-  templateUrl: './header.component.html'
++++++  selector: "app-header",
++++++  templateUrl: "./header.component.html",
++++++  styleUrls: ["./header.component.css"]
+++++ })
+++++-export class HeaderComponent {
++++++export class HeaderComponent implements OnInit {
++++++  navLogo: string;
+++++ 
++++++  constructor() {
++++++    this.navLogo = "/assets/img/logo.png";
++++++  }
++++++
++++++  ngOnInit() {}
+++++ }
+++++-- 
+++++2.20.1.windows.1
+++++
++++diff --git a/src/app/app.component.html b/src/app/app.component.html
++++index c57c8d9..7a11897 100644
++++--- a/src/app/app.component.html
+++++++ b/src/app/app.component.html
++++@@ -3,7 +3,7 @@
++++ </div>
++++ <div class="body">
++++   <app-menu></app-menu>
++++-  <div class="container container-fluid">
+++++  <div class="card-layout--container">
++++     <router-outlet></router-outlet>
++++   </div>
++++ </div>
++++diff --git a/src/scss/custom.scss b/src/scss/custom.scss
++++index 21d781f..f478789 100644
++++--- a/src/scss/custom.scss
+++++++ b/src/scss/custom.scss
++++@@ -10,3 +10,9 @@
++++   min-width: 150px;
++++   max-width: 250px;
++++ }
+++++
+++++.card-layout--container {
+++++  width: auto;
+++++  margin-left: 150px;
+++++  padding: 24px;
+++++}
++++-- 
++++2.20.1.windows.1
++++
+++diff --git a/src/app/app-routing.module.ts b/src/app/app-routing.module.ts
+++index e921bab..df64d51 100644
+++--- a/src/app/app-routing.module.ts
++++++ b/src/app/app-routing.module.ts
+++@@ -1,20 +1,30 @@
+++-import { NgModule } from '@angular/core';
+++-import { Routes, RouterModule } from '@angular/router';
++++import { NgModule } from "@angular/core";
++++import { Routes, RouterModule } from "@angular/router";
+++ 
+++-import { DashboardComponent, OverviewComponent, DetailsComponent, NewItemComponent } from './components';
++++import {
++++  DashboardComponent,
++++  OverviewComponent,
++++  DetailsComponent,
++++  NewItemComponent,
++++  SettingsComponent
++++} from "./components";
+++ 
+++ const routes: Routes = [
+++   { path: "", component: DashboardComponent },
+++-  { path: 'items', children: [
+++-    { path: 'overview', component: OverviewComponent },
+++-    { path: 'details/:id', component: DetailsComponent },
+++-    { path: 'new', component: NewItemComponent },
+++-  ]},
+++-  { path: '**', redirectTo: '/' }
++++  {
++++    path: "items",
++++    children: [
++++      { path: "overview", component: OverviewComponent },
++++      { path: "details/:id", component: DetailsComponent },
++++      { path: "new", component: NewItemComponent }
++++    ]
++++  },
++++  { path: "settings", component: SettingsComponent },
++++  { path: "**", redirectTo: "/" }
+++ ];
+++ 
+++ @NgModule({
+++   imports: [RouterModule.forRoot(routes)],
+++   exports: [RouterModule]
+++ })
+++-export class AppRoutingModule { }
++++export class AppRoutingModule {}
+++diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+++index 4cff430..b675f58 100644
+++--- a/src/app/app.module.ts
++++++ b/src/app/app.module.ts
+++@@ -1,14 +1,22 @@
+++-import { BrowserModule } from '@angular/platform-browser';
+++-import { NgModule } from '@angular/core';
+++-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+++-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
++++import { BrowserModule } from "@angular/platform-browser";
++++import { NgModule } from "@angular/core";
++++import { LocationStrategy, HashLocationStrategy } from "@angular/common";
++++import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+++ 
+++-import { AppRoutingModule } from './app-routing.module';
+++-import { AppComponent } from './app.component';
++++import { AppRoutingModule } from "./app-routing.module";
++++import { AppComponent } from "./app.component";
+++ 
+++-import { HeaderComponent, MenuComponent, OverviewComponent, DetailsComponent, NewItemComponent, DashboardComponent } from 'app/components';
++++import {
++++  HeaderComponent,
++++  MenuComponent,
++++  OverviewComponent,
++++  DetailsComponent,
++++  NewItemComponent,
++++  DashboardComponent,
++++  SettingsComponent
++++} from "app/components";
+++ 
+++-import { DataService } from 'app/services/data';
++++import { DataService } from "app/services/data";
+++ 
+++ @NgModule({
+++   declarations: [
+++@@ -19,19 +27,16 @@ import { DataService } from 'app/services/data';
+++     DetailsComponent,
+++     NewItemComponent,
+++     DashboardComponent,
++++    SettingsComponent
+++   ],
+++-  imports: [
+++-    BrowserModule,
+++-    AppRoutingModule,
+++-    FormsModule,
+++-    ReactiveFormsModule,
+++-  ],
+++-  providers: [{
+++-    provide: LocationStrategy,
+++-    useClass: HashLocationStrategy
+++-  },
+++-  DataService,
++++  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
++++  providers: [
++++    {
++++      provide: LocationStrategy,
++++      useClass: HashLocationStrategy
++++    },
++++    DataService
+++   ],
+++   bootstrap: [AppComponent]
+++ })
+++-export class AppModule { }
++++export class AppModule {}
+++diff --git a/src/app/components/index.ts b/src/app/components/index.ts
+++index 1c77a58..fc4f32f 100644
+++--- a/src/app/components/index.ts
++++++ b/src/app/components/index.ts
+++@@ -1,6 +1,7 @@
+++-export * from './header';
+++-export * from './menu';
+++-export * from './overview';
+++-export * from './details';
+++-export * from './new-item';
+++-export * from './dashboard';
++++export * from "./header";
++++export * from "./menu";
++++export * from "./overview";
++++export * from "./details";
++++export * from "./new-item";
++++export * from "./dashboard";
++++export * from "./settings";
+++diff --git a/src/app/components/menu/menu.component.css b/src/app/components/menu/menu.component.css
+++new file mode 100644
+++index 0000000..3dac7fe
+++--- /dev/null
++++++ b/src/app/components/menu/menu.component.css
+++@@ -0,0 +1,35 @@
++++.nav-item {
++++  position: relative;
++++  margin-top: 6px;
++++}
++++
++++.nav-link {
++++  font-weight: 600;
++++  font-size: 0.9rem;
++++  color: #fff;
++++  text-transform: uppercase;
++++  transition: 0.4s;
++++}
++++
++++.nav-link::after {
++++  content: "";
++++  display: block;
++++  width: 0;
++++  height: 2px;
++++  position: relative;
++++  top: 4px;
++++  left: 50%;
++++  background: #fff;
++++  transition: width 0.4s ease 0s, left 0.4s ease 0s;
++++}
++++
++++.nav-link:hover::after {
++++  width: 100%;
++++  left: 0%;
++++  transition: width 0.4s ease 0s, left 0.4s ease 0s;
++++}
++++
++++.active.nav-link::after {
++++  width: 100%;
++++  left: 0%;
++++}
+++diff --git a/src/app/components/menu/menu.component.html b/src/app/components/menu/menu.component.html
+++index 6841f8a..46d6983 100644
+++--- a/src/app/components/menu/menu.component.html
++++++ b/src/app/components/menu/menu.component.html
+++@@ -1,13 +1,26 @@
+++ <nav id="main-menu">
+++   <ul class="nav nav-sidebar nav-dark bg-dark flex-column pt-3">
+++     <li class="nav-item">
+++-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="fa fa-folder pr-2">&nbsp;</i>Dashboard</a>
++++      <a
++++        class="nav-link"
++++        routerLinkActive="active"
++++        [routerLink]="['/']"
++++        [routerLinkActiveOptions]="{ exact: true }"
++++        ><i class="fa fa-folder pr-2">&nbsp;</i>Dashboard</a
++++      >
+++     </li>
+++     <li class="nav-item">
+++-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/items','overview']"><i class="fa fa-list pr-2">&nbsp;</i>Overview</a>
++++      <a
++++        class="nav-link"
++++        routerLinkActive="active"
++++        [routerLink]="['/items', 'overview']"
++++        ><i class="fa fa-list pr-2">&nbsp;</i>Overview</a
++++      >
+++     </li>
+++     <li class="nav-item">
+++-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/settings']"><i class="fa fa-gear pr-2">&nbsp;</i>Settings</a>
++++      <a class="nav-link" routerLinkActive="active" [routerLink]="['/settings']"
++++        ><i class="fa fa-gear pr-2">&nbsp;</i>Settings</a
++++      >
+++     </li>
+++   </ul>
+++ </nav>
+++diff --git a/src/app/components/menu/menu.component.ts b/src/app/components/menu/menu.component.ts
+++index a82a8d0..f5090a1 100644
+++--- a/src/app/components/menu/menu.component.ts
++++++ b/src/app/components/menu/menu.component.ts
+++@@ -1,9 +1,8 @@
+++-import { Component  } from '@angular/core';
++++import { Component } from "@angular/core";
+++ 
+++ @Component({
+++-  selector: 'app-menu',
+++-  templateUrl: './menu.component.html'
++++  selector: "app-menu",
++++  templateUrl: "./menu.component.html",
++++  styleUrls: ["./menu.component.css"]
+++ })
+++-export class MenuComponent {
+++-
+++-}
++++export class MenuComponent {}
+++diff --git a/src/app/components/settings/index.ts b/src/app/components/settings/index.ts
+++new file mode 100644
+++index 0000000..72e8c9d
+++--- /dev/null
++++++ b/src/app/components/settings/index.ts
+++@@ -0,0 +1 @@
++++export * from "./settings.component";
+++diff --git a/src/app/components/settings/settings.component.html b/src/app/components/settings/settings.component.html
+++new file mode 100644
+++index 0000000..927b112
+++--- /dev/null
++++++ b/src/app/components/settings/settings.component.html
+++@@ -0,0 +1,11 @@
++++<div class="card-deck">
++++  <div class="card">
++++    <div class="card-header">
++++      <h1>Settings</h1>
++++    </div>
++++    <div class="card-body">
++++      Settings are empty.
++++    </div>
++++    <div class="card-footer"></div>
++++  </div>
++++</div>
+++diff --git a/src/app/components/settings/settings.component.scss b/src/app/components/settings/settings.component.scss
+++new file mode 100644
+++index 0000000..e69de29
+++diff --git a/src/app/components/settings/settings.component.spec.ts b/src/app/components/settings/settings.component.spec.ts
+++new file mode 100644
+++index 0000000..91588f3
+++--- /dev/null
++++++ b/src/app/components/settings/settings.component.spec.ts
+++@@ -0,0 +1,25 @@
++++import { async, ComponentFixture, TestBed } from '@angular/core/testing';
++++
++++import { SettingsComponent } from './settings.component';
++++
++++describe('SettingsComponent', () => {
++++  let component: SettingsComponent;
++++  let fixture: ComponentFixture<SettingsComponent>;
++++
++++  beforeEach(async(() => {
++++    TestBed.configureTestingModule({
++++      declarations: [ SettingsComponent ]
++++    })
++++    .compileComponents();
++++  }));
++++
++++  beforeEach(() => {
++++    fixture = TestBed.createComponent(SettingsComponent);
++++    component = fixture.componentInstance;
++++    fixture.detectChanges();
++++  });
++++
++++  it('should create', () => {
++++    expect(component).toBeTruthy();
++++  });
++++});
+++diff --git a/src/app/components/settings/settings.component.ts b/src/app/components/settings/settings.component.ts
+++new file mode 100644
+++index 0000000..f7a4e28
+++--- /dev/null
++++++ b/src/app/components/settings/settings.component.ts
+++@@ -0,0 +1,10 @@
++++import { Component } from "@angular/core";
++++
++++@Component({
++++  selector: "app-settings",
++++  templateUrl: "./settings.component.html",
++++  styleUrls: ["./settings.component.scss"]
++++})
++++export class SettingsComponent {
++++  constructor() {}
++++}
+++-- 
+++2.20.1.windows.1
+++
++diff --git a/src/app/components/new-item/new-item.component.css b/src/app/components/new-item/new-item.component.css
++new file mode 100644
++index 0000000..33c8e49
++--- /dev/null
+++++ b/src/app/components/new-item/new-item.component.css
++@@ -0,0 +1,30 @@
+++.form-group {
+++  display: flex;
+++  flex-direction: column;
+++  justify-content: space-between;
+++}
+++
+++.form-group--container {
+++  order: 2;
+++  display: flex;
+++  justify-content: flex-end;
+++}
+++
+++.form-label {
+++  margin: 0;
+++  text-align: right;
+++  flex-grow: 1;
+++  align-self: center;
+++  width: 120px;
+++}
+++
+++.form-control {
+++  flex-grow: 3;
+++  margin-left: 12px;
+++}
+++
+++.invalid-feedback {
+++  align-self: flex-end;
+++  order: 1;
+++  height: 30px;
+++}
++diff --git a/src/app/components/new-item/new-item.component.html b/src/app/components/new-item/new-item.component.html
++index 1aced57..3a9c84b 100644
++--- a/src/app/components/new-item/new-item.component.html
+++++ b/src/app/components/new-item/new-item.component.html
++@@ -1,23 +1,43 @@
++ <div class="card">
++   <form class="form" [formGroup]="form" (ngSubmit)="submit()">
++     <div class="card-body">
++-      <div class="alert alert-danger" *ngIf="$error| async as error">
+++      <div class="alert alert-danger" *ngIf="$error | async as error">
++         {{ error }}
++       </div>
++       <div class="form-group">
++-        <label for="name">Name</label>
++-        <input id="name" type="text" class="form-control" [class.is-invalid]="markInvalid('name')" placeholder="a name for this item" formControlName="name" />
++-        <div class="invalid-feedback">
++-          Please enter a name for this item.
+++        <div class="form-group--container">
+++          <label class="form-label" for="name">Name</label>
+++          <input
+++            id="name"
+++            type="text"
+++            class="form-control"
+++            [class.is-invalid]="markInvalid('name')"
+++            placeholder="a name for this item"
+++            formControlName="name"
+++          />
++         </div>
+++        <div class="invalid-feedback">Please enter a name for this item.</div>
++       </div>
++       <div class="form-group">
++-        <label for="description">Description</label>
++-        <input id="description" type="text" class="form-control" placeholder="a description for this item" formControlName="description" />
+++        <div class="form-group--container">
+++          <label class="form-label" for="description">Description</label>
+++          <input
+++            id="description"
+++            type="text"
+++            class="form-control"
+++            placeholder="a description for this item"
+++            formControlName="description"
+++          />
+++        </div>
++       </div>
++     </div>
++     <div class="card-footer">
++-      <input class="btn btn-success" [disabled]="form.invalid" type="submit" name="add" />
+++      <input
+++        class="btn btn-success"
+++        [disabled]="form.invalid"
+++        type="submit"
+++        name="add"
+++      />
++     </div>
++   </form>
++ </div>
++diff --git a/src/app/components/new-item/new-item.component.ts b/src/app/components/new-item/new-item.component.ts
++index 7faf1f8..e51b6ff 100644
++--- a/src/app/components/new-item/new-item.component.ts
+++++ b/src/app/components/new-item/new-item.component.ts
++@@ -1,25 +1,25 @@
++-import { Component } from '@angular/core';
++-import { Router } from '@angular/router';
++-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+++import { Component } from "@angular/core";
+++import { Router } from "@angular/router";
+++import { FormBuilder, FormGroup, Validators } from "@angular/forms";
++ 
++-import { Subject, BehaviorSubject } from 'rxjs';
+++import { Subject, BehaviorSubject } from "rxjs";
++ 
++-import { DataItem } from 'app/model';
++-import { DataService } from 'app/services/data';
+++import { DataItem } from "app/model";
+++import { DataService } from "app/services/data";
++ 
++ @Component({
++-  templateUrl: './new-item.component.html'
+++  templateUrl: "./new-item.component.html",
+++  styleUrls: ["./new-item.component.css"]
++ })
++ export class NewItemComponent {
++-
++   form: FormGroup;
++ 
++   $error: Subject<string> = new BehaviorSubject<string>(null);
++ 
++   constructor(
++-      private formBuilder: FormBuilder,
++-      private dataService: DataService,
++-      private router: Router,
+++    private formBuilder: FormBuilder,
+++    private dataService: DataService,
+++    private router: Router
++   ) {}
++ 
++   ngOnInit() {
++@@ -45,15 +45,18 @@ export class NewItemComponent {
++ 
++     const newItem: DataItem = {
++       name: value.name,
++-      description: value.description,
++-    }
+++      description: value.description
+++    };
++ 
++     console.log(value);
++ 
++-    this.dataService.createItem(newItem).subscribe((item) => {
++-      this.router.navigate(['/items','details', item.id]);
++-    }, err => {
++-      this.$error.next(err.message);
++-    });
+++    this.dataService.createItem(newItem).subscribe(
+++      item => {
+++        this.router.navigate(["/items", "details", item.id]);
+++      },
+++      err => {
+++        this.$error.next(err.message);
+++      }
+++    );
++   }
++ }
++-- 
++2.20.1.windows.1
++
+diff --git a/src/app/components/overview/overview.component.css b/src/app/components/overview/overview.component.css
+new file mode 100644
+index 0000000..d3c349c
+--- /dev/null
++++ b/src/app/components/overview/overview.component.css
+@@ -0,0 +1,51 @@
++.list-group-item {
++  padding: 18px;
++  display: flex;
++  justify-content: flex-start;
++  align-content: stretch;
++}
++
++.list-group-item__icon {
++  width: 60px;
++  align-self: center;
++}
++
++.list-group-item__data {
++  align-self: center;
++  flex-grow: 3;
++  text-transform: capitalize;
++}
++
++.list-group-item__data__description {
++  max-height: 0px;
++  height: auto;
++  transition: max-height 0.4s ease-out;
++  overflow: hidden;
++}
++
++.list-group-item:hover .list-group-item__data__description {
++  max-height: 400px;
++  transition: max-height 0.4s ease-in;
++}
++
++.overview__view-item-button {
++  height: 42px;
++  width: 132px;
++  align-self: center;
++}
++
++.card-header {
++  display: flex;
++  justify-content: flex-start;
++  align-content: stretch;
++}
++
++.overview__heading {
++  flex-grow: 3;
++}
++
++.overview__new-item-button {
++  align-self: center;
++  height: 42px;
++  width: 132px;
++}
+diff --git a/src/app/components/overview/overview.component.html b/src/app/components/overview/overview.component.html
+index e4d5470..a3a57f0 100644
+--- a/src/app/components/overview/overview.component.html
++++ b/src/app/components/overview/overview.component.html
+@@ -1,13 +1,30 @@
+ <div class="card-deck">
+   <div class="card">
+     <div class="card-header">
+-      <h1>Overview of the items</h1>
+-      <a class="btn btn-transparent" [routerLink]="['/items','new']">New</a>
++      <h1 class="overview__heading">Overview of the items</h1>
++      <a
++        class="btn btn-primary overview__new-item-button"
++        [routerLink]="['/items', 'new']"
++        ><i class="fa fa-plus-square pr-2"></i>New item</a
++      >
+     </div>
+     <ul class="list-group" *ngFor="let item of $items | async">
+-      <li class="list-group-item" (click)="onSelectItem(item.id)">{{ item | json }}</li>
++      <li class="list-group-item">
++        <div class="list-group-item__icon"></div>
++        <div class="list-group-item__data">
++          <h5>{{ item.name }}</h5>
++          <p class="list-group-item__data__description">
++            {{ item.description }}
++          </p>
++        </div>
++        <button
++          class="btn btn-secondary overview__view-item-button"
++          (click)="onSelectItem(item.id)"
++        >
++          <i class="fa fa-file pr-2">&nbsp;</i>View Item
++        </button>
++      </li>
+     </ul>
+-    <div class="card-footer">
+-    </div>
++    <div class="card-footer"></div>
+   </div>
+ </div>
+diff --git a/src/app/components/overview/overview.component.ts b/src/app/components/overview/overview.component.ts
+index 2b79103..59efd85 100644
+--- a/src/app/components/overview/overview.component.ts
++++ b/src/app/components/overview/overview.component.ts
+@@ -1,23 +1,23 @@
+-import { Component, OnInit } from '@angular/core';
+-import { ActivatedRoute, Router } from '@angular/router';
++import { Component, OnInit } from "@angular/core";
++import { ActivatedRoute, Router } from "@angular/router";
+ 
+-import { BehaviorSubject, Subject } from 'rxjs';
++import { BehaviorSubject, Subject } from "rxjs";
+ 
+-import { DataItem } from 'app/model';
+-import { DataService } from 'app/services/data';
++import { DataItem } from "app/model";
++import { DataService } from "app/services/data";
+ 
+ @Component({
+-  selector: 'app-overview',
+-  templateUrl: './overview.component.html'
++  selector: "app-overview",
++  templateUrl: "./overview.component.html",
++  styleUrls: ["./overview.component.css"]
+ })
+ export class OverviewComponent implements OnInit {
+-
+   $items: Subject<DataItem[]> = new BehaviorSubject<DataItem[]>([]);
+ 
+   constructor(
+     private dataService: DataService,
+     private router: Router,
+-    private route: ActivatedRoute,
++    private route: ActivatedRoute
+   ) {}
+ 
+   ngOnInit() {
+@@ -29,10 +29,10 @@ export class OverviewComponent implements OnInit {
+   }
+ 
+   onSelectItem(id: number) {
+-    this.router.navigate(['/items','details', id]);
++    this.router.navigate(["/items", "details", id]);
+   }
+ 
+   onNewItem() {
+-    this.router.navigate(['new']);
++    this.router.navigate(["new"]);
+   }
+ }
+-- 
+2.20.1.windows.1
+
