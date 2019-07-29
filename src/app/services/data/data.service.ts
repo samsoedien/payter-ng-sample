@@ -1,27 +1,56 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
+import { delay } from "rxjs/operators";
 
-import { DataItem } from '../../model';
+import { DataItem } from "../../model";
 
 const MOCK_ITEMS: DataItem[] = [
-  { id: 1, name: 'item1', description: 'first item'},
-  { id: 2, name: 'second item', description: 'this item comes after the first item'},
-  { id: 3, name: 'another item', description: 'we have lots of items'},
-  { id: 23, name: 'bonus item', description: 'this item is extra'},
-  { id: 51, name: 'Bobi', description: '7 ft 3 Center for the Philadelphia 76ers'},
+  {
+    id: 1,
+    name: "item1",
+    description: "first item",
+    referenceCode: "252",
+    createdDate: "2018-12-23"
+  },
+  {
+    id: 2,
+    name: "second item",
+    description: "this item comes after the first item",
+    referenceCode: "364",
+    createdDate: "2014-02-27"
+  },
+  {
+    id: 3,
+    name: "another item",
+    description: "we have lots of items",
+    referenceCode: "783",
+    createdDate: "2013-02-07"
+  },
+  {
+    id: 23,
+    name: "bonus item",
+    description: "this item is extra",
+    referenceCode: "346",
+    createdDate: "2003-11-01"
+  },
+  {
+    id: 51,
+    name: "Bobi",
+    description: "7 ft 3 Center for the Philadelphia 76ers",
+    referenceCode: "110",
+    createdDate: "2001-04-16"
+  }
 ];
 
 @Injectable()
 export class DataService {
-
   private items: Map<number, DataItem> = new Map<number, DataItem>();
 
   constructor() {
     MOCK_ITEMS.forEach(item => {
       this.items.set(item.id, item);
-    })
+    });
   }
 
   listItems(): Observable<DataItem[]> {
@@ -46,12 +75,12 @@ export class DataService {
 
   private generateId(): number {
     let id: number = 0;
-    if(this.items.size >= 100) {
-      throw new Error('cannot add any more items');
+    if (this.items.size >= 100) {
+      throw new Error("cannot add any more items");
     }
     do {
-      id = Math.floor(Math.random()*100)+1;
-    } while(this.items.has(id));
+      id = Math.floor(Math.random() * 100) + 1;
+    } while (this.items.has(id));
     return id;
   }
 }

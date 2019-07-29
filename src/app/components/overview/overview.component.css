@@ -89,3 +89,7 @@
   margin: 0 6px;
   vertical-align: middle;
 }
+
+.--additional-data {
+  margin-bottom: 0;
+}
