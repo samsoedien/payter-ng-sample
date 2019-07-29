@@ -1,0 +1,35 @@
+.nav-item {
+  position: relative;
+  margin-top: 6px;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  position: relative;
+  top: 4px;
+  left: 50%;
+  background: #fff;
+  transition: width 0.4s ease 0s, left 0.4s ease 0s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0%;
+  transition: width 0.4s ease 0s, left 0.4s ease 0s;
+}
+
+.active.nav-link::after {
+  width: 100%;
+  left: 0%;
+}

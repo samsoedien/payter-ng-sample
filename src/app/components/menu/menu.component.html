@@ -1,13 +1,26 @@
 <nav id="main-menu">
   <ul class="nav nav-sidebar nav-dark bg-dark flex-column pt-3">
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="fa fa-folder pr-2">&nbsp;</i>Dashboard</a>
+      <a
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><i class="fa fa-folder pr-2">&nbsp;</i>Dashboard</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/items','overview']"><i class="fa fa-list pr-2">&nbsp;</i>Overview</a>
+      <a
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/items', 'overview']"
+        ><i class="fa fa-list pr-2">&nbsp;</i>Overview</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/settings']"><i class="fa fa-gear pr-2">&nbsp;</i>Settings</a>
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/settings']"
+        ><i class="fa fa-gear pr-2">&nbsp;</i>Settings</a
+      >
     </li>
   </ul>
 </nav>

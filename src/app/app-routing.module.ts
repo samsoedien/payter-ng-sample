@@ -1,20 +1,30 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { DashboardComponent, OverviewComponent, DetailsComponent, NewItemComponent } from './components';
+import {
+  DashboardComponent,
+  OverviewComponent,
+  DetailsComponent,
+  NewItemComponent,
+  SettingsComponent
+} from "./components";
 
 const routes: Routes = [
   { path: "", component: DashboardComponent },
-  { path: 'items', children: [
-    { path: 'overview', component: OverviewComponent },
-    { path: 'details/:id', component: DetailsComponent },
-    { path: 'new', component: NewItemComponent },
-  ]},
-  { path: '**', redirectTo: '/' }
+  {
+    path: "items",
+    children: [
+      { path: "overview", component: OverviewComponent },
+      { path: "details/:id", component: DetailsComponent },
+      { path: "new", component: NewItemComponent }
+    ]
+  },
+  { path: "settings", component: SettingsComponent },
+  { path: "**", redirectTo: "/" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
